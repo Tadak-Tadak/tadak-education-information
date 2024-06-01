@@ -7,6 +7,7 @@
 # 자바 패키지 파일 제외
 # 맥OS 관련 파일 및 폴더 제외 
 # 윈도우 관련 파일 및 폴더 제외
+# 그레들 관련 파일 제외
 
 ### Eclipse ###
 .metadata
@@ -138,3 +139,7 @@ ehthumbs_vista.db
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
+
+# Gradle files
+.gradle/
+build/
