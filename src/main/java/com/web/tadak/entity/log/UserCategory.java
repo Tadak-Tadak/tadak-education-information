@@ -1,4 +1,4 @@
-package com.web.tadak.entity.user;
+package com.web.tadak.entity.log;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,15 +9,14 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthProvider {
+public class UserCategory {
 
-    //가입플랫폼 번호
+    //카테고리 번호
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //가입플랫폼명
-    @Column(nullable = false, length = 20)
-    private String provider;
-
+    //카테고리 내용
+    @Column(nullable = false, length = 200)
+    private String content;
 }
