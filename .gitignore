@@ -107,6 +107,9 @@ atlassian-ide-plugin.xml
 *.tar.gz
 *.rar
 
+# config 패키지 내의 파일들은 제외 #
+src/main/java/com/web/tadak/config/**
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
