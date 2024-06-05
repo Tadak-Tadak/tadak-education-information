@@ -37,13 +37,7 @@ public class Admin {
     @Column(nullable = false, length = 300)
     private String imgUrl = "default-image-url"; // 기본 이미지 URL 설정
 
-    @PrePersist
-    protected void onCreate() {
-        if (createdAt == null) {
-            createdAt = LocalDateTime.now();
-        }
-        if (imgUrl == null || imgUrl.isEmpty()) {
-            imgUrl = "default-image-url"; // 기본 이미지 URL 설정 (url 저기 넣으면 됨)
-        }
-    }
+//기본 이미지 설정 보류
+
+
 }
