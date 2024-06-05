@@ -29,6 +29,6 @@ public class AdminLog {
 
     @ManyToOne
     @JoinColumn(name = "admin_category_id", nullable = false)
-    private AdminCategories adminCategories; // 관리자 행동 카테고리 PK
+    private AdminCategory adminCategory; // 관리자 행동 카테고리 PK
 
 }

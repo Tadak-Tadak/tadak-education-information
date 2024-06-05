@@ -3,15 +3,13 @@ package com.web.tadak.entity.admin;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
-
 @Entity
 @Getter
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AdminCategories {
+public class AdminCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
