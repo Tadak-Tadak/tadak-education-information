@@ -13,8 +13,8 @@ public class TrainingInstitution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id; //훈련기관의 PK
 
     @Column(nullable = false, length = 30)
-    private String type;
+    private String type; // 훈련기관 유형 이름
 }
