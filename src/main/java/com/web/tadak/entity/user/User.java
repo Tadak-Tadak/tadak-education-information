@@ -17,6 +17,7 @@ public class User {
 
     //회원번호
     @Id
+    @MapsId("user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
