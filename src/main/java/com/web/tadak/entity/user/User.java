@@ -54,4 +54,8 @@ public class User {
     @OneToOne
     @JoinColumn(name = "provider_id")
     private AuthProvider providerId;
+
+
+
+
 }

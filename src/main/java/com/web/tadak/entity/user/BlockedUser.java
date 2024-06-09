@@ -21,13 +21,13 @@ public class BlockedUser {
     //회원번호
     @Id
     @OneToOne
-    @JoinColumn(name = "report_category_id")
+    @JoinColumn(name = "userId")
     private User userId;
 
 
     //카테고리번호
     @OneToOne
-    @JoinColumn(name = "report_category_id")
+    @JoinColumn(name = "reportCategoryId")
     private ReportCategory reportCategoryId;
 
 }
