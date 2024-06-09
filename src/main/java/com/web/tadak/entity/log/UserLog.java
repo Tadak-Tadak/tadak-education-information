@@ -1,7 +1,7 @@
 package com.web.tadak.entity.log;
 
 
-import com.web.tadak.entity.user.Users;
+import com.web.tadak.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,7 +23,7 @@ public class UserLog {
     //회원 번호
     @OneToOne
     @JoinColumn(name = "user_id")
-    private Users userId;
+    private User userId;
 
     //카테고리 번호
     @OneToOne
