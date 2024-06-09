@@ -1,7 +1,9 @@
 package com.web.tadak.repository.user;
 
+import com.web.tadak.dto.user.UserDTO;
 import com.web.tadak.entity.user.AuthProvider;
 import com.web.tadak.entity.user.User;
+import com.web.tadak.util.mapper.EntityMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
@@ -23,10 +25,13 @@ class UserRepositoryTest {
     @Autowired
     private AuthProviderRepository authProviderRepository;
 
+    @Autowired
+    private EntityMapper<UserDTO, User> entityMapper;
+
     @Test
     void testCreateUser(){
 
-        //Given
+        // Given
         AuthProvider authProvider = AuthProvider.builder()
                 .provider("naver")
                 .build();
@@ -45,10 +50,10 @@ class UserRepositoryTest {
                 .providerId(authProvider)
                 .build();
 
-        //When
+        // When
         User savedUser = userRepository.save(user);
 
-        //Then
+        // Then
         assertThat(savedUser.getId()).isNotNull();
         assertThat(savedUser.getProviderId()).isNotNull();
         assertThat(savedUser.getProviderId().getProvider()).isEqualTo("naver");
@@ -85,6 +90,48 @@ class UserRepositoryTest {
     }
 
     @Test
+    void testUpdateUser() {
+        // Given
+        AuthProvider authProvider = AuthProvider.builder()
+                .provider("naver")
+                .build();
+        authProvider = authProviderRepository.save(authProvider);
+
+        User user = User.builder()
+                .userId("testuser")
+                .email("test@test")
+                .password("password")
+                .nickname("testNick")
+                .majorStatus("y")
+                .education("testtest")
+                .createdAt(LocalDateTime.now())
+                .status("teststat")
+                .providerId(authProvider)
+                .build();
+
+        User savedUser = userRepository.save(user);
+        userRepository.flush();
+
+        // When
+        User foundUser = userRepository.findById(savedUser.getId()).orElseThrow();
+        UserDTO userDTO = entityMapper.toDTO(foundUser);
+        userDTO.setNickname("updateNick");
+
+        User updateUser = entityMapper.toEntity(userDTO);
+        userRepository.save(updateUser);
+        userRepository.flush();
+
+        // Then
+        User retrievedUser = userRepository.findById(savedUser.getId()).orElseThrow();
+        assertThat(retrievedUser.getNickname()).isEqualTo("updateNick");
+        assertThat(retrievedUser.getUserId()).isEqualTo(user.getUserId());
+        assertThat(retrievedUser.getEmail()).isEqualTo(user.getEmail());
+
+
+
+    }
+
+    @Test
     void testDeleteUser(){
         // Given
         AuthProvider authProvider = AuthProvider.builder()
@@ -104,14 +151,14 @@ class UserRepositoryTest {
                 .providerId(authProvider)
                 .build();
 
-        //When
+        // When
         User savedUser = userRepository.save(user);
         userRepository.flush();
 
         userRepository.deleteById(savedUser.getId());
         userRepository.flush();
 
-        //Then
+        // Then
         assertThat(userRepository.findById(savedUser.getId())).isEmpty();
 
     }
