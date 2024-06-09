@@ -1,0 +1,37 @@
+
+.header-container {
+    padding: 30px;
+    border-bottom: 1px solid #FD8957;
+}
+.header-items {
+    display: flex;
+    justify-content: center;
+}
+
+.header-logo {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-nav {
+    width: 60%;
+}
+.header-nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.header-nav ul li {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.header-user {
+    display: flex;
+    width: 20%;
+}
+
+.login {
+    margin-right: 20px;
+}
