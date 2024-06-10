@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MajorCategory { // 강사 전공 테이블
+public class TeacherMajorCategory { // 강사 전공 테이블
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

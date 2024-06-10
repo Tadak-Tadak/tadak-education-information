@@ -27,6 +27,6 @@ public class Teacher {
 
     @ManyToOne
     @JoinColumn(name="major_category",nullable = false)
-    private MajorCategory majorCategory; // 강사의 전공
+    private TeacherMajorCategory majorCategory; // 강사의 전공
 
 }
