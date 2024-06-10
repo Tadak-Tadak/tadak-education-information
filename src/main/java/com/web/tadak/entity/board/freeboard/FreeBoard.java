@@ -1,7 +1,6 @@
 package com.web.tadak.entity.board.freeboard;
 
-import com.web.tadak.entity.user.AuthProvider;
-import com.web.tadak.entity.user.Users;
+import com.web.tadak.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -38,7 +37,8 @@ public class FreeBoard {
 
     //회원번호
     @ManyToOne
-    @JoinColumn(name = "id")
-    private Users userId;
+    @JoinColumn(name = "user_id")
+    private User user;
+
 
 }

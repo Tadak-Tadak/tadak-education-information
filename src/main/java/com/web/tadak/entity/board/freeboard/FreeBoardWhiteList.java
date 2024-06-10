@@ -9,12 +9,12 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FreeboardWhiteList {
+public class FreeBoardWhiteList {
 
     //자유게시판번호
     @Id
     @OneToOne
-    @JoinColumn(name = "id")
-    private FreeBoard freeBoardId;
+    @JoinColumn(name = "free_board_id")
+    private FreeBoard freeBoard;
 
 }

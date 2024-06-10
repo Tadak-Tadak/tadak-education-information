@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -57,10 +55,6 @@ public class User {
     @OneToOne
     @JoinColumn(name = "provider_id")
     private AuthProvider provider;
-
-    
-    @OneToMany(mappedBy = "user")
-    private List<BlockedUser> blockedUsers = new ArrayList<>();
 
 
 

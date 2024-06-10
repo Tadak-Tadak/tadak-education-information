@@ -1,7 +1,7 @@
 package com.web.tadak.entity.board.freeboard;
 
 import com.web.tadak.entity.common.ReportCategory;
-import com.web.tadak.entity.user.Users;
+import com.web.tadak.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +11,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class FreeboardReport {
+public class FreeBoardReport {
 
     //자유게시판 신고번호
     @Id
@@ -19,13 +19,17 @@ public class FreeboardReport {
     private Long id;
 
     //회원번호
-    @Id
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
-    private Users userId;
+    private User user;
 
     //카테고리번호
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "report_category_id")
-    private ReportCategory reportCategoryId;
+    private ReportCategory reportCategory;
+
+    @ManyToOne
+    @JoinColumn(name ="free_board_id")
+    private FreeBoard freeBoard;
+
 }
