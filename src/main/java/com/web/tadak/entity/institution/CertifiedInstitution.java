@@ -7,7 +7,7 @@ import lombok.*;
 @Entity
 @Getter
 @ToString
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
 public class CertifiedInstitution {
