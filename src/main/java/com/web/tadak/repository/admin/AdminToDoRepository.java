@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AdminToDoRepository extends JpaRepository<AdminToDo, Long> {
+public interface AdminToDoRepository extends JpaRepository<AdminToDo, Long> { //관리자 할 일 정리
 }

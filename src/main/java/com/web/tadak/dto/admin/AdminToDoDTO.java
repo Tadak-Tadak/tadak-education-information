@@ -14,7 +14,7 @@ public class AdminToDoDTO {
 
     private Long id; // To-Do PK 번호
     private String content; // 할 일 내용
-    private String isDone; // 할 일 여부 (수행, 아직 안 함)
+    private String isDone; // 할 일 여부 (수행, 아직 안 함으로 작성 )
     private LocalDateTime createdAt; // 할 일 생성 일자
     private Long adminId; // 관리자 ID (참조)
 }
