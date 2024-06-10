@@ -6,7 +6,7 @@ import lombok.*;
 @Entity
 @Getter
 @ToString
-@Builder
+@Builder(toBuilder = true)  // toBuilder 옵션 추가
 @AllArgsConstructor
 @NoArgsConstructor
 public class AdminCategory {

@@ -7,10 +7,10 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @ToString
-@Builder
+@Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class ToDo {
+public class AdminToDo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
