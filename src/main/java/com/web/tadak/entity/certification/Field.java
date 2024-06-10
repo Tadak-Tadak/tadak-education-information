@@ -18,7 +18,6 @@ public class Field {
 
     //분야 번호
     @Id
-    @MapsId("field_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 

@@ -13,10 +13,10 @@ import lombok.*;
 public class CertificationField {
 
     //자격증 번호
-    @Column(nullable = false, name = "field_id")
+    @Column(nullable = false, name = "fieldId")
     private long filedId;
 
     //분야 번호
-    @Column(nullable = false, name="certification_id")
+    @Column(nullable = false, name="certificationId")
     private long certificationId;
 }
