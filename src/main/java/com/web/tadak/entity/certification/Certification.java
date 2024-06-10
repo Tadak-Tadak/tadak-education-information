@@ -18,7 +18,7 @@ public class Certification {
 
     //자격증 번호
     @Id
-    @MapsId("certification_id")
+    @MapsId("certificationId")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 

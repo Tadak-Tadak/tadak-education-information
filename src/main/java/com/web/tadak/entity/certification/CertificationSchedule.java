@@ -38,7 +38,7 @@ public class CertificationSchedule {
 
     //자격증 번호
     @ManyToOne
-    @JoinColumn(nullable = false, name="certification_id")
+    @JoinColumn(nullable = false, name="certificationId")
     private long certificationId;
 
 }

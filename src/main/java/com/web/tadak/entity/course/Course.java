@@ -54,12 +54,12 @@ public class Course {
 
     //훈련유형번호
     @ManyToOne
-    @JoinColumn(nullable = false, name="trainingTypes_id")
+    @JoinColumn(nullable = false, name="trainingTypesId")
     private long trainingTypeSeq;
 
     //기관번호
     @ManyToOne
-    @JoinColumn(nullable = false, name="기간ID")
+    @JoinColumn(nullable = false, name="institutionsId")
     private long institutionSeq;
 
 }
