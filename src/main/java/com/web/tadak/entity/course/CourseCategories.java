@@ -1,23 +1,24 @@
 package com.web.tadak.entity.course;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
+//과정 카테고리
 @Getter
 @Setter
 @ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class CourseCategories {
 
+    //과정 카테고리 번호
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    //내용
     @Column(length = 200)
     private String content;
 }

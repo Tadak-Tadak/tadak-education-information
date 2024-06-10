@@ -1,11 +1,7 @@
 package com.web.tadak.entity.course;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.MapsId;
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 //훈련유형
 @Getter
@@ -14,6 +10,7 @@ import org.springframework.data.annotation.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class TrainingType {
 
     //훈련유형번호

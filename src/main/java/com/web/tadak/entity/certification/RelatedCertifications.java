@@ -1,6 +1,7 @@
 package com.web.tadak.entity.certification;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
 
@@ -11,6 +12,7 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class RelatedCertifications {
 
     //자격증 번호

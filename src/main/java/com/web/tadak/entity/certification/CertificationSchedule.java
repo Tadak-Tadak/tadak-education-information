@@ -2,7 +2,6 @@ package com.web.tadak.entity.certification;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class CertificationSchedule {
 
     //일정 번호
@@ -39,6 +39,6 @@ public class CertificationSchedule {
     //자격증 번호
     @ManyToOne
     @JoinColumn(nullable = false, name="certificationId")
-    private long certificationId;
+    private Certification certificationId;
 
 }

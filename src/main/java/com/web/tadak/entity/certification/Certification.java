@@ -1,11 +1,7 @@
 package com.web.tadak.entity.certification;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.MapsId;
+import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 //국가 자격증
 @Getter
@@ -14,6 +10,7 @@ import org.springframework.data.annotation.Id;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Certification {
 
     //자격증 번호
@@ -28,14 +25,14 @@ public class Certification {
 
     //관련 분야
     @Column(nullable = false, length = 100)
-    private String related_field;
+    private String relatedField;
 
     //취득률
     @Column(nullable = false, length = 10)
-    private String acquisition_rate;
+    private String acquisitionRate;
 
     //응시자수
     @Column(nullable = false, length = 30)
-    private String number_of_applicant;
+    private String numberOfApplicant;
 
 }

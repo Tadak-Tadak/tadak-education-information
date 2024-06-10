@@ -1,8 +1,8 @@
 package com.web.tadak.entity.course;
 
+import com.web.tadak.entity.institution.Institutions;
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 
 import java.time.LocalDateTime;
 
@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Course {
 
     //과정번호
@@ -55,11 +56,11 @@ public class Course {
     //훈련유형번호
     @ManyToOne
     @JoinColumn(nullable = false, name="trainingTypesId")
-    private long trainingTypeSeq;
+    private TrainingType trainingTypeSeq;
 
     //기관번호
-    @ManyToOne
-    @JoinColumn(nullable = false, name="institutionsId")
-    private long institutionSeq;
+//    @ManyToOne
+//    @JoinColumn(nullable = false, name="institutionsId")
+//    private Institutions institutionSeq;
 
 }
