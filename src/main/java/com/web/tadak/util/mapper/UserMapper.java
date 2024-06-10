@@ -11,7 +11,7 @@ public class UserMapper implements EntityMapper<UserDTO, User>{
     public UserDTO toDTO(User entity) {
         return UserDTO.builder()
                 .id(entity.getId())
-                .userId(entity.getUserId())
+                .userId(entity.getMemberId())
                 .password(entity.getPassword())
                 .email(entity.getEmail())
                 .nickname(entity.getNickname())
@@ -19,7 +19,7 @@ public class UserMapper implements EntityMapper<UserDTO, User>{
                 .education(entity.getEducation())
                 .createdAt(entity.getCreatedAt())
                 .status(entity.getStatus())
-                .authProvider(entity.getProviderId())
+                .authProvider(entity.getProvider())
                 .build();
     }
 
@@ -27,7 +27,7 @@ public class UserMapper implements EntityMapper<UserDTO, User>{
     public User toEntity(UserDTO dto) {
         return User.builder()
                 .id(dto.getId())
-                .userId(dto.getUserId())
+                .memberId(dto.getUserId())
                 .password(dto.getPassword())
                 .email(dto.getEmail())
                 .nickname(dto.getNickname())
@@ -35,7 +35,7 @@ public class UserMapper implements EntityMapper<UserDTO, User>{
                 .education(dto.getEducation())
                 .createdAt(dto.getCreatedAt())
                 .status(dto.getStatus())
-                .providerId(dto.getAuthProvider())
+                .provider(dto.getAuthProvider())
                 .build();
     }
 }

@@ -20,4 +20,5 @@ public class AuthProvider {
     @Column(nullable = false, length = 20)
     private String provider;
 
+
 }

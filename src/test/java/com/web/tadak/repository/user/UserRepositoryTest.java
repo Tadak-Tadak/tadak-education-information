@@ -39,7 +39,7 @@ class UserRepositoryTest {
         authProvider = authProviderRepository.save(authProvider);
 
         User user = User.builder()
-                .userId("testuser")
+                .memberId("testuser")
                 .email("test@test")
                 .password("password")
                 .nickname("testNick")
@@ -68,7 +68,7 @@ class UserRepositoryTest {
         authProvider = authProviderRepository.save(authProvider);
 
         User user = User.builder()
-                .userId("testuser")
+                .memberId("testuser")
                 .email("test@test")
                 .password("password")
                 .nickname("testNick")
@@ -86,7 +86,7 @@ class UserRepositoryTest {
         User foundUser = userRepository.findById(savedUser.getId()).orElseThrow();
 
         // Then
-        assertThat(foundUser.getUserId()).isEqualTo("testuser");
+        assertThat(foundUser.getMemberId()).isEqualTo("testuser");
     }
 
     @Test
@@ -98,7 +98,7 @@ class UserRepositoryTest {
         authProvider = authProviderRepository.save(authProvider);
 
         User user = User.builder()
-                .userId("testuser")
+                .memberId("testuser")
                 .email("test@test")
                 .password("password")
                 .nickname("testNick")
@@ -124,7 +124,7 @@ class UserRepositoryTest {
         // Then
         User retrievedUser = userRepository.findById(savedUser.getId()).orElseThrow();
         assertThat(retrievedUser.getNickname()).isEqualTo("updateNick");
-        assertThat(retrievedUser.getUserId()).isEqualTo(user.getUserId());
+        assertThat(retrievedUser.getMemberId()).isEqualTo(user.getMemberId());
         assertThat(retrievedUser.getEmail()).isEqualTo(user.getEmail());
 
 
@@ -140,7 +140,7 @@ class UserRepositoryTest {
         authProvider = authProviderRepository.save(authProvider);
 
         User user = User.builder()
-                .userId("testuser")
+                .memberId("testuser")
                 .email("test@test")
                 .password("password")
                 .nickname("testNick")

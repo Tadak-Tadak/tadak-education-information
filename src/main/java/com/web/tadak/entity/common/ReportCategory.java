@@ -1,7 +1,10 @@
 package com.web.tadak.entity.common;
 
+import com.web.tadak.entity.user.BlockedUser;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,5 +22,8 @@ public class ReportCategory {
     //신고차단카테고리 내용
     @Column(nullable = false, length = 100)
     private String content;
+
+    @OneToMany(mappedBy = "reportCategory")
+    private List<BlockedUser> blockedUsers;
 
 }

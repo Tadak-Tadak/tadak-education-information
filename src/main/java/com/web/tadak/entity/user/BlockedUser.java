@@ -14,20 +14,22 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class BlockedUser {
 
-    //차단날짜 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    //차단날짜 
     private LocalDateTime blockedAt;
 
     //회원번호
-    @Id
-    @OneToOne
-    @JoinColumn(name = "userId")
-    private User userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
     //카테고리번호
-    @OneToOne
-    @JoinColumn(name = "reportCategoryId")
-    private ReportCategory reportCategoryId;
+    @ManyToOne
+    @JoinColumn(name = "report_category_id")
+    private ReportCategory reportCategory;
 
 }

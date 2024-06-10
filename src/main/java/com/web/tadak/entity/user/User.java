@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -20,7 +22,7 @@ public class User {
 
     //아이디
     @Column(nullable = false, length = 20)
-    private String userId;
+    private String memberId;
 
     //이메일
     @Column(nullable = false, length = 40)
@@ -53,8 +55,11 @@ public class User {
     //로그인 방식
     @OneToOne
     @JoinColumn(name = "provider_id")
-    private AuthProvider providerId;
+    private AuthProvider provider;
 
+    
+    @OneToMany(mappedBy = "user")
+    private List<BlockedUser> blockedUsers = new ArrayList<>();
 
 
 
