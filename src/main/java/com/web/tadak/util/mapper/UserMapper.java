@@ -12,14 +12,12 @@ public class UserMapper implements EntityMapper<UserDTO, User>{
         return UserDTO.builder()
                 .id(entity.getId())
                 .userId(entity.getMemberId())
-                .password(entity.getPassword())
                 .email(entity.getEmail())
                 .nickname(entity.getNickname())
                 .majorStatus(entity.getMajorStatus())
                 .education(entity.getEducation())
                 .createdAt(entity.getCreatedAt())
                 .status(entity.getStatus())
-                .authProvider(entity.getProvider())
                 .build();
     }
 
@@ -28,14 +26,12 @@ public class UserMapper implements EntityMapper<UserDTO, User>{
         return User.builder()
                 .id(dto.getId())
                 .memberId(dto.getUserId())
-                .password(dto.getPassword())
                 .email(dto.getEmail())
                 .nickname(dto.getNickname())
                 .majorStatus(dto.getMajorStatus())
                 .education(dto.getEducation())
                 .createdAt(dto.getCreatedAt())
                 .status(dto.getStatus())
-                .provider(dto.getAuthProvider())
                 .build();
     }
 }
