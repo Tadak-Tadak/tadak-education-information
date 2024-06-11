@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class User {
 
-    //회원번호
+    //회원번호 PK
     @Id
     @MapsId("user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -51,7 +51,7 @@ public class User {
     @Column(nullable = false, length = 10)
     private String status;
 
-    //로그인 방식
+    //로그인 방식 FK
     @OneToOne
     @JoinColumn(name = "provider_id")
     private AuthProvider provider;

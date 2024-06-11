@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 public class AuthProvider {
 
-    //가입플랫폼 번호
+    //가입플랫폼 PK
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

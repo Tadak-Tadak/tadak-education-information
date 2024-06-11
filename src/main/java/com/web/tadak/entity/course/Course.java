@@ -1,6 +1,5 @@
 package com.web.tadak.entity.course;
 
-import com.web.tadak.entity.institution.Institutions;
 import jakarta.persistence.*;
 import lombok.*;
 

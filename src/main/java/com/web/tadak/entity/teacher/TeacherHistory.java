@@ -1,7 +1,7 @@
 package com.web.tadak.entity.teacher;
 
 
-import com.web.tadak.entity.course.Courses;
+import com.web.tadak.entity.course.Course;
 import jakarta.persistence.*;
 import lombok.*;
 
