@@ -1,6 +1,5 @@
 package com.web.tadak.dto.user;
 
-import com.web.tadak.entity.user.AuthProvider;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -23,7 +22,7 @@ public class UserDTO {
     private LocalDateTime createdAt;
     private String status;
     private String providerName;
-    private AuthProvider authProvider;
+    private AuthProviderDTO authProviderDTO;
 
 
 

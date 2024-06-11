@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class SuggestionEditLogs {
+public class SuggestionEditLog {
 
     //건의사항 수정이력 PK
     @Id

@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @ToString
 public class BlockedUserDTO {
 
+    private Long id;
     private LocalDateTime blockedAt;
     private UserDTO userDTO;
 //    private ReportCategoryDTO reportCategoryDTO;

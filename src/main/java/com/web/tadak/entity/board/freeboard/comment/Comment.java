@@ -1,5 +1,6 @@
 package com.web.tadak.entity.board.freeboard.comment;
 
+import com.web.tadak.entity.user.User;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -33,8 +34,15 @@ public class Comment {
     @JoinColumn(name = "parent_id", nullable = true)
     private Comment parent;
 
+    //작성자
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     //자식 댓글 리스트(컬럼X)
     @OneToMany(mappedBy = "parent_id")
     private List<Comment> children = new ArrayList<>();
+
+
 
 }

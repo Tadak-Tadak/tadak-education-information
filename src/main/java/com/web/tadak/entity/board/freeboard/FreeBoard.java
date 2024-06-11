@@ -29,11 +29,11 @@ public class FreeBoard {
 
     //등록날짜
     @Column(nullable = false)
-    private LocalDateTime create_at;
+    private LocalDateTime createdAt;
 
     //조회수
     @Column(nullable = false)
-    private int view_count;
+    private Integer viewCount;
 
     //회원번호
     @ManyToOne

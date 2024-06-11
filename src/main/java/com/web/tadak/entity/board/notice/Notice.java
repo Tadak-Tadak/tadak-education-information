@@ -29,7 +29,7 @@ public class Notice {
 
     //공지사항 작성일자
     @Column(nullable = false)
-    private LocalDateTime createAt;
+    private LocalDateTime createdAt;
 
     //공지사항 조회수
     @Column(nullable = false)
