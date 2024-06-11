@@ -1,4 +1,4 @@
-package com.web.tadak.entity.board.freeboard;
+package com.web.tadak.entity.board.suggestion;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -7,33 +7,32 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@ToString
 @Builder
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class FreeBoardEditLog {
+public class SuggestionEditLogs {
 
-    //자유게시판 수정이력 PK
+    //건의사항 수정이력 PK
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //수정일자
+    //건의사항 수정날짜
     @Column(nullable = false)
     private LocalDateTime editedAt;
 
-    //수정 전 제목
+    //건의사항 수정 전 제목
     @Column(nullable = false, length = 100)
     private String prevTitle;
 
-    //수정 전 내용
+    //건의사항 수정 전 내용
     @Column(nullable = false)
     private String prevContent;
 
-    //자유게시판 번호 FK
+    //건의사항번호 FK
     @ManyToOne
-    @JoinColumn(name = "free_board_id")
-    private FreeBoard freeBoard;
-
+    @JoinColumn(name = "suggestion_id")
+    private Suggestion suggestion;
 
 }

@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 public class FreeBoardWhiteList {
 
-    //자유게시판번호
+    //자유게시판 PK/FK
     @Id
     @OneToOne
     @JoinColumn(name = "free_board_id")

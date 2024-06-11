@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class FreeBoard {
 
-    //자유게시판 번호
+    //자유게시판 PK
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
